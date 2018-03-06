@@ -10,15 +10,22 @@ speed = 100
 
 [node name="Enemy" parent="." index="0" instance=ExtResource( 2 )]
 
+shoot_audio = null
+explosion = null
+
 [node name="Enemy2" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 140, -140 )
 _sections_unfolded = [ "Transform" ]
+shoot_audio = null
+explosion = null
 
 [node name="Enemy3" parent="." index="2" instance=ExtResource( 2 )]
 
 position = Vector2( -140, -140 )
 _sections_unfolded = [ "Transform" ]
+shoot_audio = null
+explosion = null
 
 [connection signal="was_defeated" from="Enemy" to="." method="_on_Enemy_was_defeated"]
 
