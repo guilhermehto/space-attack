@@ -22,7 +22,6 @@ func _process(delta):
 	position.x += speed * direction * delta
 	if position.x > right_bound:
 		direction = -1
-		print("Yes")
 	elif position.x < left_bound:
 		direction = 1
 
