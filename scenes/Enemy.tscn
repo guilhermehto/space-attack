@@ -9,7 +9,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 45.8417, 37.4293 )
 
-[node name="Enemy" type="Area2D" index="0"]
+[node name="Enemy" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
