@@ -16,6 +16,8 @@ var half_sprite_size
 var can_shoot = true
 var dead = false
 
+signal damaged
+
 func _ready():
 	screen_size = get_viewport_rect().size.x
 	half_sprite_size = sprite.texture.get_width() * scale.x / 2
@@ -43,6 +45,7 @@ func add_damage(damage):
 	if dead:
 		return
 	health -= damage
+	emit_signal("damaged")
 	if health <= 0:
 		dead = true
 		health = 0
