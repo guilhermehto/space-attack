@@ -20,4 +20,10 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -140, -140 )
 _sections_unfolded = [ "Transform" ]
 
+[connection signal="was_defeated" from="Enemy" to="." method="_on_Enemy_was_defeated"]
+
+[connection signal="was_defeated" from="Enemy2" to="." method="_on_Enemy2_was_defeated"]
+
+[connection signal="was_defeated" from="Enemy3" to="." method="_on_Enemy3_was_defeated"]
+
 
