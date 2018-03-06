@@ -3,15 +3,17 @@ extends KinematicBody2D
 const SPEED = 500
 
 export(PackedScene) var projectile
+export var health = 50
 
 onready var sprite = $Sprite
 onready var timer = $Timer
+onready var death_timer = $DeathTimer
 
 
 var screen_size
 var half_sprite_size
 var can_shoot = true
-
+var dead = false
 
 func _ready():
 	screen_size = get_viewport_rect().size.x
@@ -34,3 +36,18 @@ func _process(delta):
 
 func _on_Timer_timeout():
 	can_shoot = true
+
+func add_damage(damage):
+	if dead:
+		return
+	health -= damage
+	if health <= 0:
+		dead = true
+		health = 0
+		death_timer.start()
+		set_process(false)
+		sprite.queue_free()
+
+
+func _on_DeathTimer_timeout():
+	get_tree().reload_current_scene()
